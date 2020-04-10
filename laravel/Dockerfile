@@ -40,7 +40,9 @@ COPY app /var/www
 
 RUN cd /var/www && composer install
 
-RUN cd /var/www && ls
+RUN cd /var/www && cp .env.example .env
+
+RUN cd app && cp .env.example .env && ls
 
 # Copy existing application directory permissions
 COPY --chown=www:www app /var/www
