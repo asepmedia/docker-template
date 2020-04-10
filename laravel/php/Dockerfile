@@ -44,7 +44,7 @@ COPY --chown=www:www . /var/www
 USER www
 
 CMD ["cp .env.example /var/www"]
-CMD ["cd /var/www", "composer install"]
+CMD ["cd /var/www && composer install"]
 CMD ["php artisan key:generate"]
 
 # Expose port 9000 and start php-fpm server
