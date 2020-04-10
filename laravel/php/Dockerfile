@@ -46,8 +46,8 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
-RUN cd /var/www  && cp .env.example .env
-RUN cd /var/www && composer install
+RUN cp .env.example .env
+RUN composer install
 
 #CMD ["cp .env.example /var/www/.env"]
 #CMD ["CD /var/www", "composer install", "php artisan key:generate"]
