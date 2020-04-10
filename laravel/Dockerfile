@@ -40,10 +40,10 @@ RUN ls && cp .env.example .env
 
 RUN composer install
 
-COPY app /var/www
+COPY . /var/www
 
 # Copy existing application directory permissions
-COPY --chown=www:www app /var/www
+COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www
