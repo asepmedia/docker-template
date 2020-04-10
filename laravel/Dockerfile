@@ -34,8 +34,8 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 
-RUN cp .env.example .env
-RUN composer install
+RUN cp ./app/.env.example ./app/.env
+#RUN composer install
 
 # Set working directory
 WORKDIR /var/www
