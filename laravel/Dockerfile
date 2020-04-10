@@ -34,7 +34,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 
-RUN cd app && ls
+CMD ["ls"]
 
 # Set working directory
 WORKDIR /var/www
