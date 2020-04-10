@@ -3,7 +3,7 @@ FROM php:7.2-fpm
 # Copy composer.lock and composer.json
 COPY composer.lock app/composer.json /var/www/
 
-COPY ./app/.env.example /var/www/.env
+COPY .env.example /var/www/.env
 
 # Set working directory
 WORKDIR /var/www
@@ -46,8 +46,8 @@ COPY --chown=www:www ./app /var/www
 # Change current user to www
 USER www
 
-CMD ["cp .env.example .env"]
-CMD ["composer install", "php artisan key:generate"]
+CMD ["cp .env.example /var/www/.env"]
+CMD ["CD /var/www", "composer install", "php artisan key:generate"]
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
