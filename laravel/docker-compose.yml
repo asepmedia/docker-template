@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./php/Dockerfile #lokasi dockerfile
+      dockerfile: Dockerfile #lokasi dockerfile
     image: asepmedia/laravel-php:1.0 #image aplikasi
     container_name: app #nama container aplikasi
     restart: unless-stopped
