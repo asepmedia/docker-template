@@ -37,7 +37,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 
-RUN ls
+RUN ls && df -h
 
 COPY ./app /var/www
 
