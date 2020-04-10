@@ -2,6 +2,8 @@ FROM php:7.2-fpm
 
 COPY ./app /var/www
 
+COPY ./app/.env.example /var/www/.env
+
 WORKDIR /var/www
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
