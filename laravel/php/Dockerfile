@@ -3,7 +3,7 @@ FROM php:7.2-fpm
 # Copy composer.lock and composer.json
 COPY composer.lock app/composer.json /var/www/
 
-COPY env.example /var/www/.env
+COPY .env.example /var/www/.env
 
 # Set working directory
 WORKDIR /var/www
