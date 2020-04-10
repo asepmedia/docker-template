@@ -40,7 +40,7 @@ COPY app /var/www
 
 RUN cd /var/www && composer install
 
-RUN cd /var/www && cp .env.example .env && php artisan optimize
+RUN cd /var/www && ls
 
 # Copy existing application directory permissions
 COPY --chown=www:www app /var/www
