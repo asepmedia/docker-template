@@ -3,7 +3,7 @@ FROM php:7.2-fpm
 # Copy composer.lock and composer.json
 COPY composer.lock app/composer.json /var/www/
 
-COPY .env.example /var/www/.env
+COPY ./../app/.env.example /var/www/.env
 
 # Set working directory
 WORKDIR /var/www
@@ -46,8 +46,6 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
-RUN cp .env.example .env
-RUN composer install
 
 #CMD ["cp .env.example /var/www/.env"]
 #CMD ["CD /var/www", "composer install", "php artisan key:generate"]
