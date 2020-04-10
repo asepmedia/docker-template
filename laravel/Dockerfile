@@ -15,6 +15,8 @@ RUN chown -R www-data:www-data \
         /var/www/storage \
         /var/www/bootstrap/cache
 
+RUN composer install
+
 RUN php artisan optimize
 
 # Expose port 9000 and start php-fpm server
