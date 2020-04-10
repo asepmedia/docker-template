@@ -33,12 +33,12 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
-
-RUN cp ./app/.env.example ./app/.env
 #RUN composer install
 
 # Set working directory
 WORKDIR /var/www
+
+RUN ls
 
 COPY ./app /var/www
 
