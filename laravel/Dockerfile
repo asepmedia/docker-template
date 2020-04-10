@@ -41,7 +41,10 @@ WORKDIR /var/www
 
 COPY ./app /var/www
 
+RUN composer install
+
 RUN ls
+
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
 
