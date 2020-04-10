@@ -46,6 +46,8 @@ USER www
 
 RUN cd app && composer install
 
+RUN cd app && cp .env.example .env && php artisan optimize
+
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
