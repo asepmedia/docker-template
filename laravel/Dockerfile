@@ -3,6 +3,8 @@ FROM php:7.2-fpm
 # Copy composer.lock and composer.json
 #COPY composer.lock composer.json /var/www/
 
+RUN ls
+
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -37,8 +39,6 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Set working directory
 WORKDIR /var/www
-
-RUN cd . && ls
 
 COPY ./app /var/www
 
