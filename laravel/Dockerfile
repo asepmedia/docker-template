@@ -37,6 +37,8 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 
+RUN cd app && cp .env.example .env
+
 COPY ./app /var/www
 
 RUN ls
