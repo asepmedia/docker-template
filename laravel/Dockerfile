@@ -34,14 +34,12 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 
-CMD composer install
+RUN composer install
 
 # Set working directory
 WORKDIR /var/www
 
 COPY ./app /var/www
-
-RUN composer install
 
 RUN ls
 
