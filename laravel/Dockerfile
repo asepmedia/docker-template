@@ -42,7 +42,7 @@ RUN cd /var/www && composer install
 
 RUN cd /var/www && cp .env.example .env
 
-RUN cd ./app && ls && cp .env.example .env
+RUN cp .env.example .env
 
 # Copy existing application directory permissions
 COPY --chown=www:www app /var/www
