@@ -1,7 +1,9 @@
 FROM php:7.2-fpm
 
 # Copy composer.lock and composer.json
-#COPY composer.lock composer.json /var/www/
+COPY ./app/composer.lock ./app/composer.json /var/www/
+
+COPY ./app/env.example /var/www/.env
 
 # Set working directory
 WORKDIR /var/www
@@ -36,10 +38,10 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
-COPY . /var/www
+COPY ./app /var/www
 
 # Copy existing application directory permissions
-COPY --chown=www:www . /var/www
+COPY --chown=www:www ./app /var/www
 
 # Change current user to www
 USER www
