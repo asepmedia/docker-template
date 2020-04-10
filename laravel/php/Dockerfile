@@ -46,8 +46,11 @@ COPY --chown=www:www ./app /var/www
 # Change current user to www
 USER www
 
-CMD ["cp .env.example /var/www/.env"]
-CMD ["CD /var/www", "composer install", "php artisan key:generate"]
+RUN cp .env.example /var/www/.env
+RUN cd /var/www && composer install
+
+#CMD ["cp .env.example /var/www/.env"]
+#CMD ["CD /var/www", "composer install", "php artisan key:generate"]
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
