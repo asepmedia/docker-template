@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: php/Dockerfile
+      dockerfile: ./php/Dockerfile
     image: asepmedia/app-php
     container_name: app
     restart: unless-stopped
