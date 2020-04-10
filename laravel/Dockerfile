@@ -36,14 +36,14 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
-RUN ls && cp .env.example .env
-
-RUN composer install
-
 COPY . /var/www
 
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
+
+RUN ls && cp .env.example .env
+
+RUN composer install
 
 # Change current user to www
 USER www
